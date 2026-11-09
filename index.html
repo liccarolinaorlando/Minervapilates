@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitMove - Práctica Analytics</title>
+  <style>
+    body { font-family: Arial; margin: 0; text-align: center; background: #faf7ff; color: #30243b; }
+    header { background: #d9c8f5; padding: 45px 15px; }
+    main { padding: 30px 15px; }
+    button { background: #7554b5; color: white; border: 0; padding: 14px 24px; margin: 10px; border-radius: 8px; cursor: pointer; }
+    section { padding: 25px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FitMove</h1>
+    <p>Movete a tu ritmo</p>
+  </header>
+
+  <main>
+    <h2>Bienvenida a FitMove</h2>
+    <p>Una página ficticia para practicar analítica digital.</p>
+
+    <button onclick="mostrar('centros')">Ver centros</button>
+    <button onclick="mostrar('contacto')">Contacto</button>
+
+    <section id="centros" hidden>
+      <h2>Nuestros centros</h2>
+      <p>Centro Palermo - Centro Belgrano</p>
+    </section>
+
+    <section id="contacto" hidden>
+      <h2>Contacto</h2>
+      <p>¡Gracias por tu interés!</p>
+    </section>
+  </main>
+
+  <script>
+    function mostrar(seccion) {
+      document.getElementById('centros').hidden = true;
+      document.getElementById('contacto').hidden = true;
+      document.getElementById(seccion).hidden = false;
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'boton_click',
+        boton_nombre: seccion
+      });
+    }
+  </script>
+</body>
+</html>
